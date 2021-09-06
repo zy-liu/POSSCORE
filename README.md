@@ -1,2 +1,2 @@
 # POSSCORE
-This repo is for POSSCORE. The code would be pulished soon.
+This repo is for POSSCORE. The code would be released soon.
