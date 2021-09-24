@@ -49,19 +49,20 @@ from posscore import scorer
 s = scorer.POSSCORE() # init POSSCORE
 
 reference = 'i like sports , football , hockey , soccer i also find swimming interesting as well .'
+candidate1 = 'i like hockey and soccer . what teams do you support ?'
+candidate2 = 'i have never swam competitively , but i did nt have it . i do like it though .'
 
-candidate = 'i like hockey and soccer . what teams do you support ?'
-
-print(s.get_posscore(reference, candidate))
-
-#output:0.528
+print(s.get_posscore(reference, candidate1))
+#output: 0.528
+print(s.get_posscore(reference, candidate2))
+#output: 0.178
 
 ```
-You can also customize the selected tag list:
+The default POS tag list is ['ADJ', 'ADV', 'VERB', 'PROPN', 'NOUN'] (please see [the paper](https://arxiv.org/pdf/2109.03039.pdf)). You can also customize the selected tag list:
 ```python
 from posscore import scorer
 s = scorer.POSSCORE() # init POSSCORE
-pos_tag_set = ['ADJ', 'ADV', 'VERB', 'PROPN', 'NOUN']
+pos_tag_set = ['ADJ', 'VERB', 'PROPN', 'NOUN']
 s.get_posscore(str_reference, str_candidate, pos_tag_set)
 
 ```
